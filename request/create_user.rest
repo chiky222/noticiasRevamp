@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/news
+Content-Type: application/json
+
+{
+    "titulo": "lucifer18",
+    "fecha": "10/10/2018",
+    "externalLink": "hola15",
+    "image": "hol5"
+}

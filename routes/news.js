@@ -1,7 +1,5 @@
 const express = require("express");
 const Noticia = require("../models/Noticia.js");
-const mongoose = require("mongoose");
-require("../mongo.js");
 
 const router = express.Router();
 
@@ -14,7 +12,6 @@ router.get("/", async (req, res) => {
   const model = await Noticia.find({})
     .then((data) => res.send(data))
     .catch((err) => console.log(err));
-  connect();
   res.end();
 });
 

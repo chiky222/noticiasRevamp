@@ -1,6 +1,5 @@
 const express = require("express");
 const Noticia = require("../models/Noticia.js");
-const mongoose = require("mongoose");
 
 const router = express.Router();
 
@@ -10,9 +9,9 @@ router.use(express.urlencoded({ extended: true }));
 // all routes in here are starting with /news
 
 router.get("/", async (req, res) => {
-  const model = await Noticia.find({}).then((data) => console.log(data));
-  mongoose.disconnect();
-  console.log("closed");
+  const model = await Noticia.find({})
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
 });
 
 router.post("/", (req, res) => {

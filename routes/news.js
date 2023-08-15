@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   const model = await Noticia.find({})
     .then((data) => res.send(data))
     .catch((err) => console.log(err));
-  console.log("consulta terminada");
+  res.end();
 });
 
 router.post("/", (req, res) => {

@@ -9,12 +9,9 @@ router.use(express.urlencoded({ extended: true }));
 
 // all routes in here are starting with /news
 
-router.get("/", async (req, res) => {
-  console.log("comienza, esperando...");
-  const model = await Noticia.find({}).then((data) => console.log(data));
-  console.log("segundo paso");
+router.get("/", (req, res) => {
+  const model = Noticia.find({}).then((data) => console.log(data));
   mongoose.disconnect();
-  console.log("tercer paso final");
   console.log("closed");
 });
 

@@ -23,3 +23,5 @@ process.on("uncaughtException", () => {
   mongoose.disconnect();
   console.log("closed");
 });
+
+module.exports = conectar();

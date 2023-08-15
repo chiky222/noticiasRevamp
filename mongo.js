@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const { MONGO_DB_URI } = process.env;
+const { MONGODB_URI } = process.env;
 
 async function conectar() {
-  if (MONGO_DB_URI) {
+  if (MONGODB_URI) {
     await mongoose
-      .connect(MONGO_DB_URI)
+      .connect(MONGODB_URI)
       .then(() => console.log("connected"))
       .catch((e) => console.log(e));
   }

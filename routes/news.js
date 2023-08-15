@@ -10,7 +10,7 @@ router.use(express.urlencoded({ extended: true }));
 
 router.get("/", async (req, res) => {
   const model = await Noticia.find({})
-    .then((data) => res.send(data))
+    .then((data) => res.send(data).status(201))
     .catch((err) => console.log(err));
 });
 

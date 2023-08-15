@@ -9,7 +9,7 @@ const noticiaSchema = new Schema({
 
 noticiaSchema.set("toJSON", {
   transform: (document, returnedObject) => {
-    delete returnedObject._id;
+    returnedObject._id.toString();
     delete returnedObject.__v;
   },
 });

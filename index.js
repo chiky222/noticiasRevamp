@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-require("dotenv").config();
+require("dotenv/config");
 require("./mongo.js");
 const cors = require("cors");
 
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(cors());
+app.use(express.json());
 
 app.use("/api/news", newsRoutes);
 

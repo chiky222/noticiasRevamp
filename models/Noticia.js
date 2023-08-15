@@ -2,14 +2,13 @@ const { model, Schema } = require("mongoose");
 
 const noticiaSchema = new Schema({
   titulo: String,
-  fecha: Date,
+  fecha: String,
   externalLink: String,
   image: String,
 });
 
 noticiaSchema.set("toJSON", {
   transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id;
     delete returnedObject._id;
     delete returnedObject.__v;
   },
